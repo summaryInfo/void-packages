@@ -27,7 +27,9 @@ make_dirs="
  /etc/cups/ssl 0700 cups lp"
 
 build_options="avahi gssapi"
-build_options_default="avahi"
+
+# Package build options
+build_options_default=""
 
 system_accounts="cups"
 system_groups=lpadmin
@@ -41,7 +43,7 @@ pre_configure() {
 
 do_configure() {
 	./configure ${configure_args} --sbindir=/usr/bin --libdir=/usr/lib \
-		--enable-acl --enable-dbus --enable-raw-printing \
+		--enable-acl --disable-dbus --enable-raw-printing \
 		--enable-threads --with-logdir=/var/log/cups \
 		--with-docdir=/usr/share/cups/doc --with-rundir=/run/cups \
 		--with-cups-user=cups --with-cups-group=lp --with-system-groups="lpadmin sys root" --enable-relro \
