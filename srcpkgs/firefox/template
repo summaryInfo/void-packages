@@ -28,7 +28,7 @@ depends="nss>=3.60 desktop-file-utils hicolor-icon-theme"
 conflicts="firefox-esr>=0"
 
 build_options="alsa jack dbus pulseaudio xscreensaver sndio wayland"
-build_options_default="alsa jack dbus pulseaudio xscreensaver sndio wayland"
+build_options_default="alsa pulseaudio wayland"
 
 case $XBPS_TARGET_MACHINE in
 	armv[56]*) broken="required NEON extensions are not supported on armv6" ;;
