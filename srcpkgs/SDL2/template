@@ -5,9 +5,9 @@ revision=1
 build_style=gnu-configure
 configure_args="--enable-alsa --disable-esd --disable-rpath --enable-libudev
  --enable-clock_gettime --disable-nas --disable-arts --disable-x11-shared
- --disable-alsa-shared --disable-pulseaudio-shared --enable-dbus"
+ --disable-alsa-shared --disable-pulseaudio-shared --disable-dbus"
 hostmakedepends="pkg-config nasm"
-makedepends="alsa-lib-devel dbus-devel eudev-libudev-devel libusb-compat-devel
+makedepends="alsa-lib-devel eudev-libudev-devel libusb-compat-devel
  libsamplerate-devel"
 short_desc="Simple DirectMedia Layer (version 2)"
 maintainer="Orphaned <orphan@voidlinux.org>"
@@ -18,7 +18,7 @@ checksum=d8215b571a581be1332d2106f8036fcb03d12a70bae01e20f424976d275432bc
 
 # Package build options
 build_options="gles opengl pulseaudio sndio vulkan wayland x11"
-build_options_default="gles opengl pulseaudio sndio vulkan wayland x11"
+build_options_default="gles opengl pulseaudio vulkan wayland x11"
 
 case "$XBPS_TARGET_MACHINE" in
 	arm*)
