@@ -3861,6 +3861,10 @@ libtagparser.so.9 tagparser-9.1.2_1
 libqtutilities.so.6 qtutilities-6.0.4_1
 libkdsoap.so.1 KDSoap-1.9.1_1
 libstoken.so.1 stoken-0.92_1
+libmupdf.so libmupdf-1.16_1_2
+libmupdf-threads.so libmupdf-1.16_1_2
+libmupdf-third.so libmupdf-1.16_1_2
+libmupdf-pkcs7.so libmupdf-1.16_1_2
 libjpegxr.so.0 jxrlib-0.2.2_1
 libjxrglue.so.0 jxrlib-0.2.2_1
 libhidrd_util.so.0 hidrd-0.2.0_1
