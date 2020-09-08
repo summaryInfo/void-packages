@@ -27,10 +27,10 @@ makedepends="zlib-devel bzip2-devel freetype-devel alsa-lib-devel libXfixes-deve
 
 build_options="x265 v4l2 vaapi vdpau vpx faac fdk_aac aom nvenc sndio pulseaudio
  dav1d zimg webp sofa"
-build_options_default="x265 v4l2 vpx aom sndio pulseaudio dav1d webp"
+build_options_default="x265 v4l2 vpx pulseaudio dav1d webp"
 
 case "$XBPS_TARGET_MACHINE" in
-	i686*|x86_64*) build_options_default+=" vaapi vdpau nvenc";;
+	i686*|x86_64*) build_options_default+=" vaapi";; # "vdpau nvenc"
 	ppc64*) build_options_default+=" vaapi vdpau";;
 	mips*) CFLAGS="-mnan=legacy";;
 esac
