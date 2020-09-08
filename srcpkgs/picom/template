@@ -3,9 +3,9 @@ pkgname=picom
 version=8.2
 revision=1
 build_style=meson
-configure_args="-Dwith_docs=true"
+configure_args="-Dwith_docs=true -Ddbus=false"
 hostmakedepends="pkg-config asciidoc"
-makedepends="MesaLib-devel dbus-devel libconfig-devel libev-devel pcre-devel
+makedepends="MesaLib-devel libconfig-devel libev-devel pcre-devel
  pixman-devel xcb-util-image-devel xcb-util-renderutil-devel
  libxdg-basedir-devel uthash"
 depends="desktop-file-utils"
