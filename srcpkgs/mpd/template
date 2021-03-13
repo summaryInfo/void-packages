@@ -3,10 +3,10 @@ pkgname=mpd
 version=0.22.6
 revision=1
 build_style=meson
-configure_args="-Dopus=enabled -Dmikmod=enabled -Dneighbor=true
+configure_args="-Dzeroconf=disabled -Dopus=enabled -Dmikmod=enabled -Dneighbor=true
  -Dsoundcloud=enabled -Dpipe=true -Dtwolame=enabled -Dbzip2=enabled
  -Dzzip=enabled -Dsmbclient=disabled -Dsystemd=disabled -Dqobuz=disabled
- -Dchromaprint=disabled -Dsoxr=enabled -Dadplug=disabled
+ -Dchromaprint=disabled -Dsoxr=enabled -Dadplug=disabled -Ddbus=disabled
  -Dfluidsynth=disabled -Dgme=disabled -Dwildmidi=disabled -Dsidplay=disabled
  -Dshine=disabled -Ddocumentation=enabled -Daudiofile=enabled -Dtremor=disabled
  -Dsolaris_output=disabled -Dhtml_manual=false -Dmanpages=true
@@ -18,8 +18,8 @@ configure_args="-Dopus=enabled -Dmikmod=enabled -Dneighbor=true
  -Dio_uring=$(vopt_if io_uring enabled disabled)"
 conf_files="/etc/mpd.conf"
 hostmakedepends="pkg-config python3-Sphinx"
-makedepends="avahi-glib-libs-devel boost-devel faad2-devel ffmpeg-devel
- libcurl-devel libid3tag-devel libmad-devel libmikmod-devel libmms-devel
+makedepends="boost-devel faad2-devel ffmpeg-devel bzip2-devel
+ libcurl-devel libid3tag-devel libmad-devel libmikmod-devel
  libmodplug-devel libmpdclient-devel libnfs-devel libsamplerate-devel
  libupnp-devel mpg123-devel opus-devel yajl-devel
  zziplib-devel libsoxr-devel audiofile-devel twolame-devel
@@ -54,7 +54,7 @@ build_options="jack lame mpcdec pulseaudio libao wavpack sndio cdio openal shout
 desc_option_cdio="Enable libcdio_paranoia input plugin"
 desc_option_openal="Enable OpenAL output plugin"
 desc_option_io_uring="Enable support for using liburing"
-build_options_default="jack pulseaudio libao sndio cdio shoutcast"
+build_options_default="pulseaudio sndio io_uring"
 
 if [ "$XBPS_CHECK_PKGS" ]; then
 	configure_args+=" -Dtest=true"
